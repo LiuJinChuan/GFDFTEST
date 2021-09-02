@@ -6,35 +6,51 @@ namespace GFDP.Sys.Entity
     [Table("adv_advert")]
     public class AdvertEntity : BaseEntity
     {
-        //广告名称
+        /// <summary>
+        /// 广告名称
+        /// </summary>
         public string cname { get; set; } = "";
 
 
-        //广告商
+        /// <summary>
+        /// 广告商
+        /// </summary>
         public string advertisers { get; set; } = "";
 
 
-        //广告商联系电话
+        /// <summary>
+        /// 联系电话
+        /// </summary>
         public string telephone { get; set; } = "";
 
 
-        //链接网址
+        /// <summary>
+        /// 链接网址
+        /// </summary>
         public string clink { get; set; } = "";
 
 
-        //文件地址
+        /// <summary>
+        /// 文件地址
+        /// </summary>
         public string cpath { get; set; } = "";
 
 
-        //广告类型
+        /// <summary>
+        /// 广告类型
+        /// </summary>
         public string ctype { get; set; } = "";
 
 
-        //排序
+        /// <summary>
+        /// 排序
+        /// </summary>
         public long sort_id { get; set; } = 1;
 
 
-        //创建时间
+        /// <summary>
+        /// 创建时间
+        /// </summary>
         public long createtime => GFContext.idworker.GetTime(id);
     }
 }

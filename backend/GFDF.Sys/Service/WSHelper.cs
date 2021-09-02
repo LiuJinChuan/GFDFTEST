@@ -47,16 +47,13 @@ namespace GFDP.Sys.Service
             string tcAdminId = arg.QueryString["tcAdminId"];
             if (string.IsNullOrEmpty(tcAdminId) || tcAdminId == "undefined")
             {
-                arg.WebSocket.Abort();
+                await arg.WebSocket.CloseAsync(WebSocketCloseStatus.InvalidMessageType, "", CancellationToken.None);
                 return;
             }
             // 2.将用户编号作为标识客户端唯一性的Key，保存客户端的WebSocket对象
             if (!sWebs.ContainsKey(tcAdminId)) sWebs.Add(tcAdminId, arg.WebSocket);
-            else
-            {
-                sWebs[tcAdminId].Abort();
-                sWebs[tcAdminId] = arg.WebSocket;
-            }
+            else sWebs[tcAdminId] = arg.WebSocket;
+
             try
             {
                 while (true)
@@ -65,7 +62,12 @@ namespace GFDP.Sys.Service
                     WebSocketReceiveResult result = await sWebs[tcAdminId].ReceiveAsync(buffer, CancellationToken.None);
                     if (sWebs[tcAdminId].State != WebSocketState.Open)
                     {
-                        sWebs.Remove(tcAdminId);
+                        if (sWebs.ContainsKey(tcAdminId))
+                        {
+                            WebSocket socket = sWebs[tcAdminId];
+                            sWebs.Remove(tcAdminId);
+                            await socket.CloseAsync(WebSocketCloseStatus.InvalidMessageType, "", CancellationToken.None);
+                        }
                         EventBus.Emit("WebSocket.Close", tcAdminId);
                         break;
                     }
@@ -73,7 +75,16 @@ namespace GFDP.Sys.Service
             }
             catch (Exception ex)
             {
-                if (sWebs.ContainsKey(tcAdminId)) sWebs.Remove(tcAdminId);
+                if (sWebs.ContainsKey(tcAdminId))
+                {
+                    WebSocket socket = sWebs[tcAdminId];
+                    sWebs.Remove(tcAdminId);
+                    await socket.CloseAsync(WebSocketCloseStatus.InvalidMessageType, "", CancellationToken.None);
+                }
+                else
+                {
+                    await arg.WebSocket.CloseAsync(WebSocketCloseStatus.InvalidMessageType, "", CancellationToken.None);
+                }
                 EventBus.Emit("WebSocket.Close", tcAdminId);
                 GFContext.logger.Error(ex);
             }
@@ -95,7 +106,12 @@ namespace GFDP.Sys.Service
             }
             catch (Exception ex)
             {
-                sWebs.Remove(tcAdminId);
+                if (sWebs.ContainsKey(tcAdminId))
+                {
+                    WebSocket socket = sWebs[tcAdminId];
+                    sWebs.Remove(tcAdminId);
+                    await socket.CloseAsync(WebSocketCloseStatus.InvalidMessageType, "", CancellationToken.None);
+                }
                 EventBus.Emit("WebSocket.Close", tcAdminId);
                 GFContext.logger.Error(ex);
                 return false;

@@ -36,7 +36,7 @@ namespace GFDF.Sys.Service
             //ToUsers=>     。。。Roles Dept  => msgid-userid关联
             foreach (var touser in tousers)
             {
-                GFContext.repository.Insert(new MessageUserEntity { id = GFContext.idworker.nextId(), msgid = id, touser = touser });
+                GFContext.repository.Insert(new Message_UserEntity { id = GFContext.idworker.nextId(), msgid = id, touser = touser });
                 //Bkey=> 触发的EventSource
                 string ev = (string)modle.msg_event;
                 if (!string.IsNullOrEmpty(ev.Trim())) EventBus.Emit(ev.Trim(), new { msg, touser, msgid = id });

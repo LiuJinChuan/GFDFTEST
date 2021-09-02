@@ -5,25 +5,35 @@ using SysContext = GFDP.Sys.GFContext;
 namespace GFDP.Sys.Entity
 {
     [Table("sys_message_user")]
-    public class MessageUserEntity : BaseEntity
+    public class Message_UserEntity : BaseEntity
     {
-        //消息id
+        /// <summary>
+        /// 消息id
+        /// </summary>
         public long msgid { get; set; } = 0;
 
 
-        //用户
+        /// <summary>
+        /// 接受者
+        /// </summary>
         public string touser { get; set; } = "";
 
 
-        //发布时间
+        /// <summary>
+        /// 发布时间
+        /// </summary>
         public long releasetime { get; set; } = 0;
 
 
-        //阅读时间
+        /// <summary>
+        /// 阅读时间
+        /// </summary>
         public long readtime { get; set; } = 0;
 
 
-        //创建时间
+        /// <summary>
+        /// 创建时间
+        /// </summary>
         public long createtime => SysContext.idworker.GetTime(id);
     }
 }

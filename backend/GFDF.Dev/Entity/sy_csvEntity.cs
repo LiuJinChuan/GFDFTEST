@@ -4,18 +4,29 @@ using GFDF.Infrastruct.Core;
 namespace GFDP.Dev.Entity
 {
     [Table("data_sy_csv")]
-    public class sy_csvEntity : BaseEntity
+    public class Sy_CsvEntity : BaseEntity
     {
-        //csv名称
+        /// <summary>
+        /// csv名称
+        /// </summary>
         public string cname {get;set;} = "";
-        
-        //csv路径
+
+
+        /// <summary>
+        /// csv路径
+        /// </summary>
         public string csvpath { get; set; } = "";
 
-        //内容
+
+        /// <summary>
+        /// 内容
+        /// </summary>
         public string ccontent { get; set; } = "";
 
-        //csv操作员
+
+        /// <summary>
+        /// csv操作员
+        /// </summary>
         public long userid { get; set; }
     }
 }

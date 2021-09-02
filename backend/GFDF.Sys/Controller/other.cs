@@ -94,7 +94,7 @@ namespace GFDP.Sys.Controllers
     };
 
     [RoutePrefix("fin/account")]
-    public partial class F_AccountController : BaseController<FINAccountEntity>
+    public partial class F_AccountController : BaseController<Fin_AccountEntity>
     {
         public F_AccountController()
         {

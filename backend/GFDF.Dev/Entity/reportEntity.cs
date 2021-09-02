@@ -6,16 +6,27 @@ namespace GFDP.Dev.Entity
     [Table("sys_report")]
     public class ReportEntity : BaseEntity
     {
-        //名称
+        /// <summary>
+        /// 名称
+        /// </summary>
         public string cname { get; set; } = "";
 
-        //调用名称
+
+        /// <summary>
+        /// 调用名称
+        /// </summary>
         public string ename { get; set; } = "";
 
-        //报表类型
+
+        /// <summary>
+        /// 报表类型
+        /// </summary>
         public string reporttype { get; set; } = "";
-        
-        //备注
+
+
+        /// <summary>
+        /// 备注
+        /// </summary>
         public string memo { get; set; } = "";
     }
 }

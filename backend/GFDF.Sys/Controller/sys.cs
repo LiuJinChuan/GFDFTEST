@@ -10,7 +10,7 @@ using GFDP.Sys.Filter;
 namespace GFDP.Sys.Controllers
 {
     [RoutePrefix("qrtz/task")]
-    public class QrtzTaskController : BaseController<QrtzTaskEntity>
+    public class QrtzTaskController : BaseController<Qrtz_TaskEntity>
     {
 
         [HttpPost]
@@ -27,7 +27,7 @@ namespace GFDP.Sys.Controllers
     public class MessageController : BaseController<MessageEntity> { };
 
     [RoutePrefix("sys/message_user")]
-    public class MessageUserController : BaseController<MessageUserEntity>
+    public class MessageUserController : BaseController<Message_UserEntity>
     {
         public MessageUserController()
         {
@@ -48,7 +48,7 @@ namespace GFDP.Sys.Controllers
     public class FormController : BaseController<FormEntity> { }
 
     [RoutePrefix("sys/region")]
-    public class RegionController : BaseController<DataRegionEntity>
+    public class RegionController : BaseController<Data_RegionEntity>
     {
         [AllowAnonymous]
         public override ResponseResult List(string json = "")

@@ -7,19 +7,27 @@ namespace GFDP.Sys.Entity
     [Table("sys_message")]
     public class MessageEntity : BaseEntity
     {
-        //消息键
+        /// <summary>
+        /// 消息键
+        /// </summary>
         public string code { get; set; } = "";
 
 
-        //描述
+        /// <summary>
+        /// 描述
+        /// </summary>
         public string msg { get; set; } = "";
 
 
-        //业务数据
+        /// <summary>
+        /// 业务数据
+        /// </summary>
         public string busdata { get; set; } = "";
 
 
-        //创建时间
+        /// <summary>
+        /// 创建时间
+        /// </summary>
         public long createtime => SysContext.idworker.GetTime(id);
     }
 }

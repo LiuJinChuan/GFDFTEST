@@ -7,32 +7,32 @@ namespace GFDP.Sys.Entity
     public class DeptEntity : BaseEntity
     {
         /// <summary>
-        /// 
+        /// 部门名称
         /// </summary> 
         public string cname { get; set; } = "";
 
+
         /// <summary>
-        /// 
+        /// 上级
         /// </summary> 
         public long pid { get; set; }
 
+
         /// <summary>
-        /// 
+        /// 排序
         /// </summary> 
         public int seqno { get; set; }
 
+
         /// <summary>
-        /// 
+        /// 业务编码
         /// </summary> 
         public string bno { get; set; } = "";
 
-        //部门领导
-        public long deptleader { get; set; }
 
-        //分管领导
-        public long incharge { get; set; }
-
-        //类型
+        /// <summary>
+        /// 类型
+        /// </summary>
         [Write(false)]
         public string depttype
         {

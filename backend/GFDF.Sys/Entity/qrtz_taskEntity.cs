@@ -4,41 +4,74 @@ using GFDF.Infrastruct.Core;
 namespace GFDP.Sys.Entity
 {
     [Table("qrtz_task")]
-    public class QrtzTaskEntity : BaseEntity
-    {    
-        //任务类型
-        public string ctype {get;set;} = "";        
+    public class Qrtz_TaskEntity : BaseEntity
+    {
+        /// <summary>
+        /// 任务类型
+        /// </summary>
+        public string ctype { get; set; } = "";
 
-        //名称
-        public string cname {get;set;} = "";        
 
-        //所属模块
-        public string module {get;set;} = "";        
+        /// <summary>
+        /// 名称
+        /// </summary>
+        public string cname { get; set; } = "";
 
-        //类型
-        public string ttype {get;set;} = "";        
 
-        //重复次数
-        public decimal  repeatnum {get;set;}         
+        /// <summary>
+        /// 所属模块
+        /// </summary>
+        public string module { get; set; } = "";
 
-        //时间间隔
-        public long interval {get;set;}         
 
-        //CRON表达式
-        public string cron {get;set;} = "";        
+        /// <summary>
+        /// 类型
+        /// </summary>
+        public string ttype { get; set; } = "";
 
-        //有效起始时间
-        public long cbegin {get;set;}         
 
-        //有效结束时间
-        public long cend {get;set;}         
+        /// <summary>
+        /// 重复次数
+        /// </summary>
+        public decimal repeatnum { get; set; }
 
-        //认证方式
-        public string authway {get;set;} = "";        
 
-        //触发类型
+        /// <summary>
+        /// 时间间隔
+        /// </summary>
+        public long interval { get; set; }
+
+
+        /// <summary>
+        /// CRON表达式
+        /// </summary>
+        public string cron { get; set; } = "";
+
+
+        /// <summary>
+        /// 有效起始时间
+        /// </summary>
+        public long cbegin { get; set; }
+
+
+        /// <summary>
+        /// 有效结束时间
+        /// </summary>
+        public long cend { get; set; }
+
+
+        /// <summary>
+        /// 认证方式
+        /// </summary>
+        public string authway { get; set; } = "";
+
+
+        /// <summary>
+        /// 触发类型
+        /// </summary>
         [Write(false)]
-        public int triggertype {
+        public int triggertype
+        {
             get
             {
                 return (flag & 3);
@@ -49,7 +82,10 @@ namespace GFDP.Sys.Entity
             }
         }
 
-        //运行状态
+
+        /// <summary>
+        /// 运行状态
+        /// </summary>
         [Write(false)]
         public int runstate
         {

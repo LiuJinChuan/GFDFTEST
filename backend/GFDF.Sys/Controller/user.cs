@@ -119,7 +119,6 @@ namespace GFDP.Sys.Controllers
             string sql = "update sys_user set pwd=@pwd where id=@id and cstatus&4=0";
             int affected = GFContext.repository.Execute(sql, new { id = Convert.ToInt64(Request.Properties["U_ID"]), pwd = ((string)upPwd.newpwd).ToMd5() });
             AssertHelper.EnsureTrue(affected > 0, "用户已被锁定，不能进行修改密码操作。");
-            //GFContext.repository.UpdateDynamic<UserEntity>(new { id=0, pwd = upPwd.newpwd.ToMd5() });
         }
 
         /// <summary>
@@ -140,7 +139,6 @@ namespace GFDP.Sys.Controllers
             string refToken = GFContext.IssueToken(new { model.id }, "REFRESH", model.id.ToString(), 86400);
 
             GFContext.cache.Insert($"U_{model.id}", new { model.id, model.account, model.cname, model.dept, model.deptname, model.roles, token }, new TimeSpan(0, 0, 0, 7200));
-            //EventBus.Emit("common.login", new { userid=model.id, HttpContext.Current.Request.UserAgent});
             //cache可增加多个属性以满足不同业务需求，由业务系统扩展。
             return ResponseResult.Success(new { token, refToken, model.account, model.cname, model.dept, model.deptname });
         }

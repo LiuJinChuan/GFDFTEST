@@ -6,13 +6,27 @@ namespace GFDP.Dev.Entity
     [Table("sys_meta")]
     public class MetaEntity : BaseEntity
     {
-        //元数据名称
+        /// <summary>
+        /// 元数据名称
+        /// </summary>
         public string cname { get; set; } = "";
-        //元数据名称
+
+
+        /// <summary>
+        /// 元数据名称
+        /// </summary>
         public string tname { get; set; } = "";
-        //元数据调用名
+
+
+        /// <summary>
+        /// 元数据调用名
+        /// </summary>
         public string callcode { get; set; } = "";
-        //备注
+
+
+        /// <summary>
+        /// 备注
+        /// </summary>
         public string memo { get; set; } = "";
     }
 }

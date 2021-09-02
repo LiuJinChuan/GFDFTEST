@@ -68,23 +68,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BaseController.cs" />
-    <Compile Include="Controller\commonController.cs" />
-    <Compile Include="Controller\otherController.cs" />
+    <Compile Include="Controller\common.cs" />
+    <Compile Include="Controller\other.cs" />
     <Compile Include="Controller\adv.cs" />
     <Compile Include="Controller\sys.cs" />
-    <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Controller\user.cs" />
     <Compile Include="Entity\AdvertEntity.cs" />
     <Compile Include="Entity\Advert_ReleaseEntity.cs" />
     <Compile Include="Entity\Advert_SpaceEntity.cs" />
     <Compile Include="Entity\AuditLogEntity.cs" />
     <Compile Include="Entity\ButtonEntity.cs" />
-    <Compile Include="Entity\DataRegionEntity.cs" />
+    <Compile Include="Entity\Data_RegionEntity.cs" />
     <Compile Include="Entity\DeptEntity.cs" />
     <Compile Include="Entity\DictEntity.cs" />
     <Compile Include="Entity\FileResourceEntity.cs" />
-    <Compile Include="Entity\FINAccountEntity.cs" />
+    <Compile Include="Entity\Fin_AccountEntity.cs" />
     <Compile Include="Entity\Fin_FlowEntity.cs" />
-    <Compile Include="Entity\MessageUserEntity.cs" />
+    <Compile Include="Entity\Message_UserEntity.cs" />
     <Compile Include="Entity\MessageEntity.cs" />
     <Compile Include="Entity\FormsEntity.cs" />
     <Compile Include="Entity\FormValueEntity.cs" />
@@ -92,11 +92,11 @@
     <Compile Include="Entity\MenuEntity.cs" />
     <Compile Include="Entity\NoticeEntity.cs" />
     <Compile Include="Entity\PermisEntity.cs" />
-    <Compile Include="Entity\qrtz_taskEntity.cs" />
+    <Compile Include="Entity\Qrtz_TaskEntity.cs" />
     <Compile Include="Entity\RelevanceEntity.cs" />
     <Compile Include="Entity\RoleEntity.cs" />
     <Compile Include="Entity\UserEntity.cs" />
-    <Compile Include="Entity\WebAPIEntity.cs" />
+    <Compile Include="Entity\WebApiEntity.cs" />
     <Compile Include="Filter\ApiAuthAttribute.cs" />
     <Compile Include="Filter\EventBusFilter.cs" />
     <Compile Include="Filter\WebApiExceptionAttribut.cs" />

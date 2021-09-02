@@ -38,7 +38,7 @@ namespace GFDP.Dev.Controllers
     public class CodeSegController : BaseController<CodeSegEntity> { }
 
     [RoutePrefix("data/sy_csv")]
-    public class SyCsvController : BaseController<sy_csvEntity> { }
+    public class SyCsvController : BaseController<Sy_CsvEntity> { }
 
     [RoutePrefix("sys/reportdtl")]
     public class ReportdtlController : BaseController<ReportdtlEntity> { }

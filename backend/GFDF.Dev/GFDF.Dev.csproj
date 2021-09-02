@@ -59,19 +59,18 @@
   <ItemGroup>
     <Compile Include="Controller\dashboardController.cs" />
     <Compile Include="Controller\devController.cs" />
-    <Compile Include="Entity\chartEntity.cs" />
+    <Compile Include="Entity\ChartEntity.cs" />
     <Compile Include="Entity\CodeSegDtlEntity.cs" />
     <Compile Include="Entity\CodeSegEntity.cs" />
-    <Compile Include="Entity\dashboardEntity.cs" />
+    <Compile Include="Entity\DashboardEntity.cs" />
     <Compile Include="Entity\DbEntity.cs" />
     <Compile Include="Entity\DbTableEntity.cs" />
     <Compile Include="Entity\DBTableFieldEntity.cs" />
     <Compile Include="Entity\FormInsEntity.cs" />
-    <Compile Include="Entity\FormsEntity.cs" />
     <Compile Include="Entity\MetaEntity.cs" />
-    <Compile Include="Entity\reportdtlEntity.cs" />
-    <Compile Include="Entity\reportEntity.cs" />
-    <Compile Include="Entity\sy_csvEntity.cs" />
+    <Compile Include="Entity\ReportdtlEntity.cs" />
+    <Compile Include="Entity\ReportEntity.cs" />
+    <Compile Include="Entity\Sy_CsvEntity.cs" />
     <Compile Include="Entity\TablesEntity.cs" />
     <Compile Include="GFContext.cs" />
   </ItemGroup>

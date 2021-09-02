@@ -4,41 +4,59 @@ using GFDF.Infrastruct.Core;
 namespace GFDP.Sys.Entity
 {
     [Table("sys_webapi")]
-    public class WebapiEntity : BaseEntity
+    public class WebApiEntity : BaseEntity
     {
-    
-        //名称
-        public string cname {get;set;} = "";
+        /// <summary>
+        /// 名称
+        /// </summary>
+        public string cname { get; set; } = "";
 
-        //模块
+
+        /// <summary>
+        /// 模块
+        /// </summary>
         public string module { get; set; }
 
-        //上级类目
-        public long pid {get;set;} 
-        
 
-        //类别
-        public string cid {get;set;} = "";
-        
+        /// <summary>
+        /// 上级类目
+        /// </summary>
+        public long pid { get; set; }
 
-        //控制器
-        public string controll {get;set;} = "";
-        
 
-        //方法
-        public string action {get;set;} = "";
-        
+        /// <summary>
+        /// 类别
+        /// </summary>
+        public string cid { get; set; } = "";
 
-        //请求方式
-        public string method {get;set;} = "";
-        
 
-        //调用标识
-        public string callcode {get;set;} = "";
-        
+        /// <summary>
+        /// 控制器
+        /// </summary>
+        public string controll { get; set; } = "";
 
-        //排序
-        public int seqno {get;set;} 
-        
+
+        /// <summary>
+        /// 方法
+        /// </summary>
+        public string action { get; set; } = "";
+
+
+        /// <summary>
+        /// 请求方式
+        /// </summary>
+        public string method { get; set; } = "";
+
+
+        /// <summary>
+        /// 调用标识
+        /// </summary>
+        public string callcode { get; set; } = "";
+
+
+        /// <summary>
+        /// 排序
+        /// </summary>
+        public int seqno { get; set; }
     }
 }

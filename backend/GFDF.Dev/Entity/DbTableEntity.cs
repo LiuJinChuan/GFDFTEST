@@ -11,15 +11,18 @@ namespace GFDP.Dev.Entity
         /// </summary> 
         public string ename { get; set; }
 
+
         /// <summary>
         /// 表名（中文）
         /// </summary> 
         public string cname { get; set; } = "";
 
+
         /// <summary>
         /// 所属数据库
         /// </summary> 
         public long btdatabase { get; set; } = 0;
+
 
         /// <summary>
         /// 所属服务器
