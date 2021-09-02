@@ -1,0 +1,61 @@
+<template>
+  <el-dialog
+    :close-on-click-modal="false"
+    :close-on-press-escape="false"
+    :visible.sync="dialogVisible"
+    :title="title"
+    @close="handleClose"
+    append-to-body
+    width="60%"
+  >
+    <avue-form
+      v-if="dialogVisible"
+      :option="option"
+      v-model="form"
+      @submit="handleSubmit"
+    ></avue-form>
+  </el-dialog>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      form: {},
+      dialogVisible: false,
+      option: {},
+      title: "",
+    };
+  },
+  methods: {
+    handleSubmit(form, done) {
+      done();
+      this.open();
+    },
+
+    open() {
+      this.$alert(JSON.stringify(this.form), " ", {
+        confirmButtonText: "确定",
+        callback: () => {},
+      });
+    },
+
+    handleClose() {
+      this.form = {};
+    },
+  },
+};
+</script>
+<style  scoped lang='scss'>
+/deep/ .el-dialog {
+  margin-top: 0 !important;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/deep/ .el-dialog .el-dialog__body {
+  max-height: 700px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+</style>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+
+  <link rel="stylesheet" href="<%= BASE_URL %>cdn/element-ui.css" />
+  <link rel="stylesheet" href="<%= BASE_URL %>cdn/avue.css" />
+  <link rel="stylesheet" href="<%= BASE_URL %>cdn/animate.min.css" />
+  <link rel="stylesheet" href="<%= BASE_URL %>cdn/icon/index.css" />
+  <link rel="stylesheet" href="<%= BASE_URL %>cdn/icon/iconfont.css" />
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+
+  <link rel="stylesheet" href="https://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=sQmy5PvZoUqbXZBMrlv0t0QGVIYhWxuy"></script>
+  <script type="text/javascript"
+    src="https://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+
+  <script src="<%= BASE_URL %>cdn/html2canvas.min.js"></script>
+  <script src="<%= BASE_URL %>cdn/Sortable.min.js" charset="utf-8"></script>
+  <script src="<%= BASE_URL %>cdn/FileSaver.min.js" charset="utf-8"></script>
+  <script src="<%= BASE_URL %>cdn/xlsx.full.min.js" charset="utf-8"></script>
+  <title></title>
+  <style>
+    html,
+    body,
+    #app {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .avue-home {
+      background-color: #303133;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .avue-home__main {
+      user-select: none;
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .avue-home__footer {
+      width: 100%;
+      flex-grow: 0;
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    .avue-home__footer>a {
+      font-size: 12px;
+      color: #ababab;
+      text-decoration: none;
+    }
+
+    .avue-home__loading {
+      height: 32px;
+      width: 32px;
+      margin-bottom: 20px;
+    }
+
+    .avue-home__title {
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .avue-home__sub-title {
+      color: #ababab;
+      font-size: 12px;
+    }
+
+    .el-submenu__title {
+      background-color: #20222a;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .el-submenu__title:hover,
+    .el-submenu__title:hover i {
+      background-color: #20222a;
+      color: rgba(255, 255, 255);
+    }
+
+    .el-submenu__title i {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="avue-home">
+      <div class="avue-home__main">
+        <img class="avue-home__loading" src="/svg/loading-spin.svg" alt="loading" />
+        <div class="avue-home__title">
+          正在加载资源
+        </div>
+        <div class="avue-home__sub-title">
+          初次加载资源可能需要较多时间 请耐心等待
+        </div>
+      </div>
+      <div class="avue-home__footer">
+        <a href="https://www.goofoo.cn/" target="_blank">
+          https://www.goofoo.cn/
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="<%= BASE_URL %>util/aes.js" charset="utf-8"></script>
+  <script src="<%= BASE_URL %>cdn/vue.min.js"></script>
+  <script src="<%= BASE_URL %>cdn/vuex.min.js" charset="utf-8"></script>
+  <script src="<%= BASE_URL %>cdn/vue-router.min.js" charset="utf-8"></script>
+  <script src="<%= BASE_URL %>cdn/axios.min.js" charset="utf-8"></script>
+  <script src="<%= BASE_URL %>cdn/element-ui.js" charset="utf-8"></script>
+  <script src="<%= BASE_URL %>cdn/avue.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src='https://webapi.amap.com/maps?v=1.4.11&key=7ab53b28352e55dc5754699add0ad862&plugin=AMap.PlaceSearch'></script>
+  <script type="text/javascript" src="https://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+</body>
+
+</html>

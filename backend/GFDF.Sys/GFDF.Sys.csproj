@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4641F7C8-F09A-4262-BC35-33C7DB265055}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GFDF.Sys</RootNamespace>
+    <AssemblyName>GFDF.Sys</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\fsdy2000\dll\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentScheduler">
+      <HintPath>..\..\..\fsdy2000\dll\FluentScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\GFDF\backend\GFDP.WebApi\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\fsdy2000\dll\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\..\..\fsdy2000\dll\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\fsdy2000\dll\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\..\..\fsdy2000\dll\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\..\..\fsdy2000\dll\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\BaseController.cs" />
+    <Compile Include="Controller\commonController.cs" />
+    <Compile Include="Controller\otherController.cs" />
+    <Compile Include="Controller\adv.cs" />
+    <Compile Include="Controller\sys.cs" />
+    <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Entity\AdvertEntity.cs" />
+    <Compile Include="Entity\Advert_ReleaseEntity.cs" />
+    <Compile Include="Entity\Advert_SpaceEntity.cs" />
+    <Compile Include="Entity\AuditLogEntity.cs" />
+    <Compile Include="Entity\ButtonEntity.cs" />
+    <Compile Include="Entity\DataRegionEntity.cs" />
+    <Compile Include="Entity\DeptEntity.cs" />
+    <Compile Include="Entity\DictEntity.cs" />
+    <Compile Include="Entity\FileResourceEntity.cs" />
+    <Compile Include="Entity\FINAccountEntity.cs" />
+    <Compile Include="Entity\Fin_FlowEntity.cs" />
+    <Compile Include="Entity\MessageUserEntity.cs" />
+    <Compile Include="Entity\MessageEntity.cs" />
+    <Compile Include="Entity\FormsEntity.cs" />
+    <Compile Include="Entity\FormValueEntity.cs" />
+    <Compile Include="Entity\PageEntity.cs" />
+    <Compile Include="Entity\MenuEntity.cs" />
+    <Compile Include="Entity\NoticeEntity.cs" />
+    <Compile Include="Entity\PermisEntity.cs" />
+    <Compile Include="Entity\qrtz_taskEntity.cs" />
+    <Compile Include="Entity\RelevanceEntity.cs" />
+    <Compile Include="Entity\RoleEntity.cs" />
+    <Compile Include="Entity\UserEntity.cs" />
+    <Compile Include="Entity\WebAPIEntity.cs" />
+    <Compile Include="Filter\ApiAuthAttribute.cs" />
+    <Compile Include="Filter\EventBusFilter.cs" />
+    <Compile Include="Filter\WebApiExceptionAttribut.cs" />
+    <Compile Include="GFContext.cs" />
+    <Compile Include="Job\ApiJobs.cs" />
+    <Compile Include="Service\BaseService.cs" />
+    <Compile Include="Service\PublishService.cs" />
+    <Compile Include="Service\RevelanceService.cs" />
+    <Compile Include="Service\WSHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GFDF.Infrastruct\GFDF.Infrastruct.csproj">
+      <Project>{ba0b83e0-b4d9-4063-98c1-b9aacfe8b633}</Project>
+      <Name>GFDF.Infrastruct</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

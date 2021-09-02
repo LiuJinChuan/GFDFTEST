@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BC407DF-4702-408C-9160-F717E39C5BC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GFDF.Dev</RootNamespace>
+    <AssemblyName>GFDF.Dev</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\GFDF\backend\GFDP.WebApi\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\..\..\fsdy2000\dll\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\fsdy2000\dll\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\..\..\fsdy2000\dll\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\..\..\fsdy2000\dll\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\dashboardController.cs" />
+    <Compile Include="Controller\devController.cs" />
+    <Compile Include="Entity\chartEntity.cs" />
+    <Compile Include="Entity\CodeSegDtlEntity.cs" />
+    <Compile Include="Entity\CodeSegEntity.cs" />
+    <Compile Include="Entity\dashboardEntity.cs" />
+    <Compile Include="Entity\DbEntity.cs" />
+    <Compile Include="Entity\DbTableEntity.cs" />
+    <Compile Include="Entity\DBTableFieldEntity.cs" />
+    <Compile Include="Entity\FormInsEntity.cs" />
+    <Compile Include="Entity\FormsEntity.cs" />
+    <Compile Include="Entity\MetaEntity.cs" />
+    <Compile Include="Entity\reportdtlEntity.cs" />
+    <Compile Include="Entity\reportEntity.cs" />
+    <Compile Include="Entity\sy_csvEntity.cs" />
+    <Compile Include="Entity\TablesEntity.cs" />
+    <Compile Include="GFContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GFDF.Infrastruct\GFDF.Infrastruct.csproj">
+      <Project>{ba0b83e0-b4d9-4063-98c1-b9aacfe8b633}</Project>
+      <Name>GFDF.Infrastruct</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GFDF.Sys\GFDF.Sys.csproj">
+      <Project>{4641f7c8-f09a-4262-bc35-33c7db265055}</Project>
+      <Name>GFDF.Sys</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Filter\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
